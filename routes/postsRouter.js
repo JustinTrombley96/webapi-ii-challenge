@@ -75,7 +75,8 @@ router.post('/:id/comments', (req, res) => {
 	Posts.insertComment(comment)
 		.then(data => {
 			if (data) {
-				res.status(201).json({ data });
+				res.status(201).json(data);
+				console.log(data);
 			} else {
 				res.status(404).json({ message: 'The post with the specified ID does not exist.' });
 			}
